@@ -39,12 +39,30 @@ public class MainActivity extends AppCompatActivity {
         return super.onCreateOptionsMenu(menu);
     }
 
-
-    public boolean onOptionsItemSelected(MenuItem item) {
+    // обновление меню
+    @Override
+    public boolean onPrepareOptionsMenu(Menu menu) {
         // TODO Auto-generated method stub
-        Toast.makeText(this, item.getTitle(), Toast.LENGTH_SHORT).show();
-        return super.onOptionsItemSelected(item);
+        // пункты меню с ID группы = 1 видны, если в CheckBox стоит галка
+        menu.setGroupVisible(1, chb.isChecked());
+        return super.onPrepareOptionsMenu(menu);
     }
 
+    // обработка нажатий
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // TODO Auto-generated method stub
+        StringBuilder sb = new StringBuilder();
+
+        // Выведем в TextView информацию о нажатом пункте меню
+        sb.append("Item Menu");
+        sb.append("\r\n groupId: " + String.valueOf(item.getGroupId()));
+        sb.append("\r\n itemId: " + String.valueOf(item.getItemId()));
+        sb.append("\r\n order: " + String.valueOf(item.getOrder()));
+        sb.append("\r\n title: " + item.getTitle());
+        tv.setText(sb.toString());
+
+        return super.onOptionsItemSelected(item);
+    }
 
 }
