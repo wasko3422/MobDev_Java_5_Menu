@@ -47,6 +47,11 @@ public class MainActivity extends AppCompatActivity {
         // TODO Auto-generated method stub
         StringBuilder sb = new StringBuilder();
 
+        if (item.getOrder() == 6){   // смотрим по порядку
+            android.os.Process.killProcess(android.os.Process.myPid());
+            System.exit(1);
+        }
+
         // Выведем в TextView информацию о нажатом пункте меню
         sb.append("Item Menu");
         sb.append("\r\n groupId: " + String.valueOf(item.getGroupId()));

@@ -31,5 +31,17 @@
             android:orderInCategory="4"
             android:title="exit">
         </item>
+
+        <item
+            android:id="@+id/example"
+            android:orderInCategory="7"
+            android:title="example">
+        </item>
+
+        <item
+            android:id="@+id/truly_exit"
+            android:orderInCategory="6"
+            android:title="чисто выход">
+        </item>
     </group>
 </menu>
